@@ -1,51 +1,147 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Acesta este primul slide</section>
-				<section>Slide 2</section>
-				<section>Slide 3</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <img src="img/remote.png" width="300" height="200"/>
+            <h3>Aplicatie mobila pentru controlul calculatoarelor personale</h3>
+            <p>
+                <small>Anghel Valentin-Gabriel</small>
+            </p>
+            <p>
+                <small>Profesor coordonator: Pocatilu Paul</small>
+            </p>
+        </section>
+        <section>
+            <h2>Scop</h2>
+            <p>Scopul aplicației este de a asigura utilizatorilor functile unei telecomande pentru calculatorul
+                personal. Astfel, utilizatorul va putea executa instructiuni de baza de pe
+                propriul telefon, fara a mai fi nevoit sa mearga la calculator</p>
+        </section>
+        <section>
+            <h3>Arhitectura</h3>
+            <ul>
+                <li>Mobil</li>
+                <li>Desktop</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Schema a flowului de mesaje</h3>
+            <img src="img/download.png"/>
+        </section>
+        <section>
+            <h3>Comunicarea instructiunilor</h3>
+            <ol>
+                <li>Internet Socket</li>
+                <li>Bluetooth Socket</li>
+                <li>Noi tehnologii</li>
+            </ol>
+        </section>
+        <section><pre><code class="hljs" data-trim contenteditable>
+public interface IClient
+{
+    void connect();
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+    void sendInteger(int number);
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+    void sendString(String message);
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+    void close();
+}</code></pre>
+        </section>
+        <section>
+            <h2>Limbaje de programare folosite</h2>
+            <ul>
+                <li>Java - Android</li>
+                <li>C# - Windows Forms - MetroFramework GUI - 32feet.NET</li>
+                <li>ASP.NET - MVC</li>
+            </ul>
+        </section>
+        <section>
+            <img width="300" height="550" src="img/options.png"/>
+            <img width="300" height="550" src="img/PresentationMenu.png"/>
+            <img width="300" height="550" src="img/PowerMenu.png"/>
+
+        </section>
+        <section>
+            <h2>Functii</h2>
+            <ol>
+                <li>Control mouse</li>
+                <li>Control tastatura</li>
+                <li>
+                    Control functii media
+                    <ul>
+                        <li>Sunet</li>
+                        <li>Video</li>
+                    </ul>
+                </li>
+                <li>
+                    Controlul calculatorului
+                    <ul>
+                        <li>Inchidere</li>
+                        <li>Restart</li>
+                        <li>Programare inchidere</li>
+                    </ul>
+                </li>
+                <li>Functii pentru prezentari</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Aplicatii concurente</h2>
+            <ol>
+                <li>TeamViewer</li>
+                <li>Unified remote</li>
+                <li>Remote Link (PC Remote)</li>
+            </ol>
+        </section>
+        <section>
+            <h1>Va multumesc</h1>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+        controls: false,
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
 </html>
