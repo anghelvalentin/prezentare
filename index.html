@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>reveal.js</title>
+    <title>Prezentare licență</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/white.css">
@@ -26,7 +26,7 @@
     <div class="slides">
         <section>
             <img src="img/remote.png" width="300" height="200"/>
-            <h3>Aplicatie mobila pentru controlul calculatoarelor personale</h3>
+            <h3>Aplicație mobilă pentru controlul calculatoarelor personale</h3>
             <p>
                 <small>Anghel Valentin-Gabriel</small>
             </p>
@@ -35,18 +35,35 @@
             </p>
         </section>
         <section>
-            <h2>Scop</h2>
-            <p>Scopul aplicației este de a asigura utilizatorilor functile unei telecomande pentru calculatorul
-                personal. Astfel, utilizatorul va putea executa instructiuni de baza de pe
-                propriul telefon, fara a mai fi nevoit sa mearga la calculator</p>
+            <h3>Cuprins</h3>
+            <ul>
+                <li>Scop</li>
+                <li>Funcții</li>
+                <li>Aplicații concurente</li>
+                <li>Arhitectura</li>
+                <li>Realizarea sistemului informatic</li>
+                <li>Comunicarea instrucțiuniilor</li>
+                <li>Limbaje și tehnologii folosite</li>
+                <li>Funcționalități viitoare</li>
+            </ul>
         </section>
+
         <section>
-            <h2>Functii</h2>
+            <h3>Scop</h3>
+            <p style="text-align: justify; text-indent: 5%">Scopul aplicației este de a asigura utilizatorilor funcțiile
+                unei telecomande
+                pentru calculatorul
+                personal. Astfel, utilizatorul va putea executa instrucțiuni de bază de pe
+                propriul telefon, fără a mai fi nevoit să meargă la calculator</p>
+        </section>
+
+        <section>
+            <h3>Funcții</h3>
             <ol>
                 <li>Control mouse</li>
-                <li>Control tastatura</li>
+                <li>Control tastatură</li>
                 <li>
-                    Control functii media
+                    Control funcții media
                     <ul>
                         <li>Sunet</li>
                         <li>Video</li>
@@ -55,39 +72,55 @@
                 <li>
                     Controlul calculatorului
                     <ul>
-                        <li>Inchidere</li>
+                        <li>Închidere</li>
                         <li>Restart</li>
-                        <li>Programare inchidere</li>
+                        <li>Programare închidere</li>
                     </ul>
                 </li>
-                <li>Functii pentru prezentari</li>
+                <li>Funcții pentru prezentări</li>
+                <li>Partajare ecran</li>
             </ol>
         </section>
+
         <section>
-            <img width="300" height="550" src="img/options.png"/>
-            <img width="300" height="550" src="img/PresentationMenu.png"/>
-            <img width="300" height="550" src="img/PowerMenu.png"/>
+            <h3>Aplicații concurente</h3>
+            <ol>
+                <li>Unified remote</li>
+                <li>Remote Link (PC Remote)</li>
+                <li>Monect PC Remote</li>
+            </ol>
         </section>
+
         <section>
             <h3>Arhitectura</h3>
             <ul>
-                <li>Mobil</li>
-                <li>Desktop</li>
+                <li>Aplicație Mobilă</li>
+                <li>Aplicație Desktop</li>
             </ul>
-        </section>
-        <section>
-            <h3>Schema a flowului de mesaje</h3>
+            <br/>
             <img src="img/download.png"/>
         </section>
+
         <section>
-            <h3>Comunicarea instructiunilor</h3>
+            <h3>Realizarea sistemului informatic</h3>
+            <p style="text-align: justify">Fiecare instrucțiune are un cod. Acest cod este transmis către aplicația
+                desktop.
+                În funcție de codul primit, aplicația desktop apelează o metodă din librăria <em>user32.dll</em></p>
+            <pre><code class="hljs" data-trim contenteditable spellcheck="false">
+[DllImport("user32.dll")]
+        public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg,
+            IntPtr wParam, IntPtr lParam);
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Comunicarea instrucțiunilor</h3>
             <ol>
                 <li>Internet Socket</li>
                 <li>Bluetooth Socket</li>
                 <li>Noi tehnologii</li>
             </ol>
-        </section>
-        <section><pre><code class="hljs" data-trim contenteditable>
+            <pre><code class="hljs" data-trim contenteditable spellcheck="false">
 public interface IClient
 {
     void connect();
@@ -96,35 +129,46 @@ public interface IClient
 
     void sendString(String message);
 
+    String receiveImage();
+
     void close();
 }</code></pre>
         </section>
         <section>
-            <h2>Limbaje de programare folosite</h2>
+            <figure>
+                <img width="300" height="550" src="img/mainOptions.png"/>
+                <img width="300" height="550" src="img/PresentationMenu.png"/>
+                <img width="300" height="550" src="img/PowerMenu.png"/>
+           <figcaption>Capturi din aplicația android</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <figure>
+                <img src="img/aplicatieDesktop.png"/>
+                <figcaption>Fereastra principală a aplicației desktop</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h3>Limbaje și tehnologii folosite</h3>
             <ul>
                 <li>Java - Android</li>
-                <li>C# - Windows Forms - MetroFramework GUI - 32feet.NET</li>
-                <li>ASP.NET - MVC</li>
+                <li>C# - Windows Forms - MetroFramework GUI - 32feet.NET - User32.dll - InstallShield</li>
+                <li>ASP.NET - MVC - REST API</li>
             </ul>
         </section>
 
         <section>
-            <h2>Aplicatii concurente</h2>
-            <ol>
-                <li>TeamViewer</li>
-                <li>Unified remote</li>
-                <li>Remote Link (PC Remote)</li>
-            </ol>
-        </section>
-        <section>
-            <h2>Functionalitati viitoare</h2>
+            <h3>Funcționalități viitoare</h3>
             <ul>
-                <li>Conectarea dintr-o alta retea</li>
-                <li>Manager de fisiere</li>
+                <li>Conectarea dintr-o altă rețea</li>
+                <li>Manager de fișiere</li>
+                <li>Controlul calculatorului dintr-o aplicație web</li>
             </ul>
         </section>
         <section>
-            <h1>Va multumesc</h1>
+            <h3>Vă mulțumesc</h3>
         </section>
     </div>
 </div>
