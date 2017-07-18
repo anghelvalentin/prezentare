@@ -14,11 +14,11 @@
 
     <!-- Printing and PDF exports -->
     <script>
-        var link = document.createElement( 'link' );
+        var link = document.createElement('link');
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
     </script>
 
 
@@ -41,11 +41,11 @@
             <ul>
                 <li>Scop</li>
                 <li>Funcții</li>
-                <li>Aplicații concurente</li>
                 <li>Arhitectura</li>
                 <li>Realizarea sistemului informatic</li>
                 <li>Comunicarea instrucțiuniilor</li>
                 <li>Limbaje și tehnologii folosite</li>
+                <li>Aplicații concurente</li>
                 <li>Funcționalități viitoare</li>
             </ul>
         </section>
@@ -83,14 +83,6 @@
             </ol>
         </section>
         <section>
-            <h3>Aplicații concurente</h3>
-            <ol>
-                <li>Unified remote</li>
-                <li>Remote Link (PC Remote)</li>
-                <li>Monect PC Remote</li>
-            </ol>
-        </section>
-        <section>
             <h3>Arhitectura</h3>
             <ul>
                 <li>Aplicație Mobilă</li>
@@ -104,11 +96,11 @@
             <p style="text-align: justify">Fiecare instrucțiune are un cod. Acest cod este transmis către aplicația
                 desktop.
                 În funcție de codul primit, aplicația desktop apelează o metodă din librăria <em>user32.dll</em></p>
-            <pre><code class="hljs" data-trim contenteditable spellcheck="false">
-[DllImport("user32.dll")]
-        public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg,
-            IntPtr wParam, IntPtr lParam);
-            </code></pre>
+            <!--<pre><code class="hljs" data-trim contenteditable spellcheck="false">-->
+<!--[DllImport("user32.dll")]-->
+        <!--public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg,-->
+            <!--IntPtr wParam, IntPtr lParam);-->
+            <!--</code></pre>-->
         </section>
         <section>
             <h3>Comunicarea instrucțiunilor</h3>
@@ -148,10 +140,18 @@ public interface IClient
         <section>
             <h3>Limbaje și tehnologii folosite</h3>
             <ul>
-                <li>Java - Android</li>
+                <li>Java - Android (Fragmente, Servicii, Receptori de mesaje, Taskuri asincrone)</li>
                 <li>C# - Windows Forms - MetroFramework GUI - 32feet.NET - User32.dll - InstallShield</li>
                 <li>ASP.NET - MVC - REST API - EntityFramework - LINQ</li>
             </ul>
+        </section>
+        <section>
+            <h3>Aplicații concurente</h3>
+            <ol>
+                <li>Unified remote</li>
+                <li>Remote Link (PC Remote) - ASUS</li>
+                <li>Monect PC Remote</li>
+            </ol>
         </section>
         <section>
             <h3>Funcționalități viitoare</h3>
