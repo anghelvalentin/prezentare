@@ -93,14 +93,14 @@
         </section>
         <section>
             <h3>Realizarea sistemului informatic</h3>
-            <p style="text-align: justify">Fiecare instrucțiune are un cod. Acest cod este transmis către aplicația
+            <p style="text-align: justify">Fiecare instrucțiune are un cod asociat. Acest cod este transmis către aplicația
                 desktop.
                 În funcție de codul primit, aplicația desktop apelează o metodă din librăria <em>user32.dll</em></p>
-            <!--<pre><code class="hljs" data-trim contenteditable spellcheck="false">-->
-<!--[DllImport("user32.dll")]-->
-        <!--public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg,-->
-            <!--IntPtr wParam, IntPtr lParam);-->
-            <!--</code></pre>-->
+            <pre><code class="hljs" data-trim contenteditable spellcheck="false">
+[DllImport("user32.dll")]
+        public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg,
+            IntPtr wParam, IntPtr lParam);
+            </code></pre>
         </section>
         <section>
             <h3>Comunicarea instrucțiunilor</h3>
